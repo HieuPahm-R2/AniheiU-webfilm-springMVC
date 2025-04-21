@@ -1,7 +1,7 @@
 # AniHeiU
  
- Online Flim Streaming web 
- 
+ Online Flim Streaming web
+ The project is simply based on personal interests and the desire to receive positive interaction from the community.
  
  
  ## TechStack
@@ -11,5 +11,4 @@
  - JSP (Java Server Page) / JSTL
  - Angular js(version 18.x.x)
  
- 
- ## Screenshots
+
