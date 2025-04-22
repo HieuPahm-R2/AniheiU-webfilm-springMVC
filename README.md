@@ -1,4 +1,4 @@
-# AniHeiU
+# AniHoyo
  
  Online Flim Streaming web
  The project is simply based on personal interests and the desire to receive positive interaction from the community.
