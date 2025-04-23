@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -19,5 +20,8 @@ public class FilmDTO {
     private Boolean type;
     private int releaseYear;
     private Set<CategoryDTO> Categories;
+    private CountryDTO country;
+    private List<SeasonDTO> seasons;
+    private Set<TagDTO> tags;
     private Timestamp uploadDate;
 }

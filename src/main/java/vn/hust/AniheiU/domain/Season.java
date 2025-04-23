@@ -1,16 +1,14 @@
 package vn.hust.AniheiU.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Getter
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Season {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +17,7 @@ public class Season {
     private String seasonName;
 
     @ManyToOne
-    private Film film;
+    private Film films;
     @OneToMany(mappedBy = "season")
     private List<Episode> episodes;
 }

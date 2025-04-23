@@ -4,13 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class SeasonDTO {
+@NoArgsConstructor
+@Data
+public class TagDTO {
     private Long id;
-    private String seasonName;
-    private List<EpisodeDTO> episodes;
+    private String nametag;
 }

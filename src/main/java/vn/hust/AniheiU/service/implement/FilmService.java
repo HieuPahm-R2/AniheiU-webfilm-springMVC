@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import vn.hust.AniheiU.domain.Film;
 import vn.hust.AniheiU.domain.dtos.FilmDTO;
+import vn.hust.AniheiU.repository.CategoryRepository;
 import vn.hust.AniheiU.repository.FilmRepository;
+import vn.hust.AniheiU.service.InCategoryService;
 import vn.hust.AniheiU.service.InFilmService;
 
 @Service
@@ -18,6 +20,8 @@ public class FilmService implements InFilmService {
     private ModelMapper modelMapper;
     @Autowired
     private FilmRepository repository;
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @Override
     public List<FilmDTO> getAll() {
@@ -44,5 +48,11 @@ public class FilmService implements InFilmService {
     @Override
     public FilmDTO insertForSave(FilmDTO dto) {
         return modelMapper.map(repository.save(modelMapper.map(dto, Film.class)), FilmDTO.class);
+    }
+
+    @Override
+    public List<FilmDTO> getAllByCategoryId(long id) {
+        return categoryRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Not found anything.."))
+                .getFilmList().stream().map(item -> modelMapper.map(item, FilmDTO.class)).toList();
     }
 }

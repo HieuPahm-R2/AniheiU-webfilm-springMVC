@@ -1,22 +1,23 @@
 package vn.hust.AniheiU.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private int releaseYear;
     @Column(columnDefinition = "nvarchar(150)")
     private String name;
     @Column(columnDefinition = "nvarchar(4000)")
@@ -30,7 +31,11 @@ public class Film {
 
     @ManyToMany
     private List<Category> categories;
-    @OneToMany(mappedBy = "film")
+    @OneToMany(mappedBy = "films")
     private List<Season> seasons;
+    @ManyToMany
+    private List<Tag> tags;
+    @ManyToOne
+    private Country countries;
 
 }

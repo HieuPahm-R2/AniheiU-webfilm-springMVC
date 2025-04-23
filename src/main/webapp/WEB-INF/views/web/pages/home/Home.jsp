@@ -1,16 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
         <!doctype html>
         <html lang="en">
 
-        <%@include file="../decorator/meta/head.jsp" %>
+        <%@include file="../../../decorator/meta/head.jsp" %>
 
             <body style="background-color: rgb(38, 50, 56);">
 
                 <!-- header -->
-                <%@include file="../decorator/header/header.jsp" %>
+                <%@include file="../../../decorator/header/Header.jsp" %>
                     <!-- end header -->
-
                     <!-- home -->
                     <section class="home home--bg">
                         <div class="container">
@@ -61,7 +60,7 @@
 
                     <section class="content">
                         <div class="content__head">
-                            <div class="conntainer">
+                            <div class="container">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="content__title">All Films</div>
@@ -1043,13 +1042,10 @@
                         </div>
                     </section>
                     <!-- end expected premiere -->
-
-
+                    <%@include file="../../../decorator/footer/Footer.jsp" %>
                     <!-- end footer -->
 
-                    <%@include file="../decorator/scrpit/scrpit.jsp" %>
-
+                    <%@include file="../../../decorator/script/script.jsp" %>
 
             </body>
-
         </html>

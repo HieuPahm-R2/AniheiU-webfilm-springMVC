@@ -1,4 +1,4 @@
-package vn.hust.AniheiU.controller;
+package vn.hust.AniheiU.controller.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import vn.hust.AniheiU.service.implement.FilmService;
 
 @Controller
-@RequestMapping
 public class HomeController {
-    @Autowired
-    private FilmService filmService;
-
+    private final FilmService filmService;
+    public HomeController(FilmService filmService) {
+        this.filmService = filmService;
+    }
     @GetMapping("/")
-    public String GetHome(Model model) {
+    public String getHome(Model model) {
         model.addAttribute("filmList", filmService.getAll());
-        return "Home/home.jsp";
+        return "web/pages/home/Home.jsp";
     }
 }

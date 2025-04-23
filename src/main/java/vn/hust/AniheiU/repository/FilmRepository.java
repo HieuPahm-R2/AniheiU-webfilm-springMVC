@@ -6,4 +6,5 @@ import vn.hust.AniheiU.domain.Film;
 
 @Repository
 public interface FilmRepository extends JpaRepository<Film, Long> {
+
 }
