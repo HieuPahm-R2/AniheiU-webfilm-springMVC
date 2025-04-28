@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Data
 public class EpisodeDTO {
-    private Integer ep;
+    
     private Long id;
     private String linkFilm;
     private Boolean status;

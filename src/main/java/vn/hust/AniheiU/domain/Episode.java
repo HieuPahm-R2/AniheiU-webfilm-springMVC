@@ -15,7 +15,7 @@ public class Episode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private int ep;
+    
     @Column(columnDefinition = "nvarchar(2000)")
     private String linkFilm;
     private Timestamp uploadDate;
