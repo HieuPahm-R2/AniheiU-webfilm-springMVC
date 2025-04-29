@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import vn.hust.AniheiU.service.InFilmService;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/admin")
 public class AdminController {
     @Autowired
     private InFilmService filmService;
-    @GetMapping("/admin")
+    @GetMapping("/admin-home")
     public String getAdminPage(Model model){
         model.addAttribute("film", filmService.getAll());
         return "admin/index.jsp";
