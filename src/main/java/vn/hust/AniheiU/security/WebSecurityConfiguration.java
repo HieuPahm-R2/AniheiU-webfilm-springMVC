@@ -36,12 +36,12 @@ public class WebSecurityConfiguration  {
             .authorizeHttpRequests(auth -> auth
                 .dispatcherTypeMatchers(DispatcherType.FORWARD, DispatcherType.INCLUDE).permitAll()
                 .requestMatchers("/", "/css/**", "/js/**", "/icon/**", "/img/**").permitAll()
-                .requestMatchers("/admin/**").hasRole("ADMIN")                
-                .requestMatchers("/login", "/register").permitAll()
+                .requestMatchers("/admin/**").permitAll()               
+                .requestMatchers("/login","/logout", "/register").permitAll()
                 .anyRequest().permitAll()
-            ).csrf(csrf -> csrf.disable());
-            // .formLogin(formLogin -> formLogin
-            // .loginPage("/login")
+            ).csrf(csrf -> csrf.disable())
+            .formLogin(formLogin -> formLogin
+            .loginPage("/login"));
             // .successHandler(customSuccessHandler())
             // .failureUrl("/login?error").permitAll())
             // .exceptionHandling(ex -> ex.accessDeniedPage("/accessDenied"));

@@ -23,8 +23,7 @@
                                         id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">Category</a>
                                     <!--Angular js-->
-                                    <ul class="dropdown-menu header__dropdown-menu"
-                                        aria-labelledby="dropdownMenuCatalog">
+                                    <ul class="dropdown-menu header__dropdown-menu" style="display: grid;grid-template-columns: repeat(3,1fr);column-gap: 20px;width: fit-content" aria-labelledby="dropdownMenuCatalog">
                                         <li ng-repeat="x in responseData"><a href={{"/category/"+x.id}}>{{x.name}}</a>
                                         </li>
                                     </ul>
@@ -43,7 +42,7 @@
                                     <i class="icon ion-ios-search"></i>
                                 </button>
 
-                                <a href="#" class="header__sign-in">
+                                <a href="/login" class="header__sign-in">
                                     <i class="icon ion-ios-log-in"></i>
                                     <span>sign in</span>
                                 </a>
@@ -77,7 +76,7 @@
         let myApp = angular.module("category", []);
         myApp.controller('categoryController', function ($scope, $http) {
             // CALL API
-            $http.get('http://localhost:8082/api/ver1/category-api/get-all-categories')
+            $http.get('http://localhost:442/api/v1/category-api/get-all-categories')
                 .then(function (response) {
                     $scope.responseData = response.data;
                     console.log(response.data)

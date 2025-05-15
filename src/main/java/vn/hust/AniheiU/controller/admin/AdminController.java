@@ -13,7 +13,7 @@ import vn.hust.AniheiU.service.InFilmService;
 public class AdminController {
     @Autowired
     private InFilmService filmService;
-    @GetMapping("/admin-home")
+    @GetMapping("")
     public String getAdminPage(Model model){
         model.addAttribute("film", filmService.getAll());
         return "admin/index.jsp";

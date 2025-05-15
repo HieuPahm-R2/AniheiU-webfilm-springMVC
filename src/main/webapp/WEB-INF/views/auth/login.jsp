@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
  <html>
- <%@include file="../decorator/head/head.jsp"%>
+ <%@include file="../decorator/meta/head.jsp"%>
  <body>
  
  <div class="sign section--bg" data-bg="/img/section/section.jpg">
@@ -9,13 +10,13 @@
              <div class="col-12">
                  <div class="sign__content">
                      <!-- authorization form -->
-                     <form action="login" method="post" class="sign__form">
+                     <form:form class="sign__form">
                          <a href="#" class="sign__logo">
-                             <img src="/img/aniix.svg" alt="">
+                             <img src="../../../../resources/static/img/logo.svg" alt="">
                          </a>
  
                          <div class="sign__group">
-                             <input type="text" class="sign__input" placeholder="Username" id="username" name="username">
+                             <input type="text" class="sign__input" placeholder="Username or Email" id="username" name="username">
                          </div>
  
                          <div class="sign__group">
@@ -30,8 +31,8 @@
  
                          <span class="sign__text">Don't have an account? <a href="signup.html">Sign up!</a></span>
  
-                         <span class="sign__text"><a href="#">Forgot password?</a></span>
-                     </form>
+                         <p class="sign__text"><a href="#">Forgot password?</a></p>
+                     </form:form>
                      <!-- end authorization form -->
                  </div>
              </div>
